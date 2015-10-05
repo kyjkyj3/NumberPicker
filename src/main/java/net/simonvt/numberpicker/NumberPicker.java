@@ -406,7 +406,7 @@ public class NumberPicker extends LinearLayout {
     /**
      * Flag whether the selector should wrap around.
      */
-    private boolean mWrapSelectorWheel;
+    private boolean mWrapSelectorWheel = false;
 
     /**
      * The back ground color used to optimize scroller fading.
@@ -580,7 +580,6 @@ public class NumberPicker extends LinearLayout {
         final int layoutResId = attributesArray.getResourceId(
                 R.styleable.NumberPicker_internalLayout, DEFAULT_LAYOUT_RESOURCE_ID);
         mHasSelectorWheel = (layoutResId != DEFAULT_LAYOUT_RESOURCE_ID);
-
         mSolidColor = attributesArray.getColor(R.styleable.NumberPicker_solidColor, 0);
 
         mSelectionDivider = attributesArray.getDrawable(R.styleable.NumberPicker_selectionDivider);
@@ -1364,7 +1363,8 @@ public class NumberPicker extends LinearLayout {
             mValue = mMinValue;
         }
         boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
-        setWrapSelectorWheel(wrapSelectorWheel);
+//        setWrapSelectorWheel(wrapSelectorWheel);
+        setWrapSelectorWheel(false);
         initializeSelectorWheelIndices();
         updateInputTextView();
         tryComputeMaxWidth();
@@ -1402,7 +1402,8 @@ public class NumberPicker extends LinearLayout {
             mValue = mMaxValue;
         }
         boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
-        setWrapSelectorWheel(wrapSelectorWheel);
+//        setWrapSelectorWheel(wrapSelectorWheel);
+        setWrapSelectorWheel(false);
         initializeSelectorWheelIndices();
         updateInputTextView();
         tryComputeMaxWidth();
