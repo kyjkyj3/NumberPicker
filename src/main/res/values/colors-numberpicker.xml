@@ -2,4 +2,7 @@
 <resources>
 
     <color name="transparent">#00000000</color>
+    <color name="skyblue">#6DC6DD</color>
+    <color name="greytext">#BEBEC1</color>
+    <color name="greydivider">#696662</color>
 </resources>
