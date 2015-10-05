@@ -1,19 +1,21 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 22
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "net.simonvt.numberpicker"
-        minSdkVersion 8
-        targetSdkVersion 19
+        minSdkVersion 18
+        targetSdkVersion 22
     }
 
     buildTypes {
         release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        abortOnError false
     }
 }
