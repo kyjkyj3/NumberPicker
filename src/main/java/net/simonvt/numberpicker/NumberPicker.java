@@ -1994,7 +1994,11 @@ public class NumberPicker extends LinearLayout {
         }
         mSetSelectionCommand.mSelectionStart = selectionStart;
         mSetSelectionCommand.mSelectionEnd = selectionEnd;
-        post(mSetSelectionCommand);
+        try {
+            post(mSetSelectionCommand);
+        } catch (IndexOutOfBoundsException e) {
+
+        }
     }
 
     /**
